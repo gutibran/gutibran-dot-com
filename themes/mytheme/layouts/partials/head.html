@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ .Params.description }}">
+    {{ if eq .Params.pageType "post"}}
+        {{ $urlParts := split .Permalink "/" }}
+        {{ $postTitle := index $urlParts 4 | replaceRE "-" " " | title }}
+        {{ $pageRoot := index $urlParts 3 | title }}
+        <title>{{ $postTitle }} | {{ $pageRoot }} | {{ .Site.Title }}</title>
+    {{ else }}
+        {{ if eq .Page.RelPermalink "/" }}
+            <title>Index | {{ .Site.Title }}</title>
+        {{ end }}
+       <title>{{ trim .Page.RelPermalink "/" | title}} | {{ .Site.Title }}</title>
+    {{ end }}
+    <link rel="stylesheet" type="text/css" href="/css/global.css">
+    {{ if .Params.enableSyntaxHighlighting }}
+        <link rel="stylesheet" type="text/css" href="/css/syntaxHighlighting.css">
+    {{ end }}
+    {{ if .Params.enableMathJax }}
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script>
+        MathJax = {
+            tex: {
+            displayMath: [['\\[', '\\]'], ['$$', '$$']],  // block
+            inlineMath: [['\\(', '\\)']]                  // inline
+            }
+        };
+        </script>
+    {{ end }}
+</head>

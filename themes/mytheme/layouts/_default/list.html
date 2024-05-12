@@ -1,0 +1,43 @@
+{{ define "main" }}
+{{ if .Params.enableBreadcrumbs }}
+{{ if eq .Title "Index" }}
+<ol class="breadcrumbs">
+    <li class="active">{{ .Title }}</li>
+</ol>
+{{ else }}
+{{ $urlParts := split .Permalink "/" }}
+{{ $cleanedUrlParts := slice }}
+{{ range $urlPart := $urlParts }}
+{{ if and (not (or (eq $urlPart "") (findRE "^http:" $urlPart))) }}
+{{ $cleanedUrlParts = $cleanedUrlParts | append $urlPart }}
+{{ end }}
+{{ end }}
+<ol class="breadcrumbs">
+    {{ $breadcrumbLength := len $cleanedUrlParts }}
+    {{ range $index, $breadcrumb := $cleanedUrlParts }}
+    {{ $url := "/" | urlize }}
+    {{ if eq $index (sub $breadcrumbLength 1) }}
+    <li class="active">{{ $breadcrumb | replaceRE "-" " " | title }}</li>
+    {{ else }}
+    {{ if or (eq $breadcrumb "localhost:1313") (eq $breadcrumb "gutibran.com") }}
+    <li>
+        <a href="/">Index</a>
+    </li>
+    {{ else }}
+    <li>
+        <a href="/{{ $breadcrumb }}">{{ $breadcrumb |replaceRE "-" " " | title }}</a>
+    </li>
+    {{ end }}
+    <small>></small>
+    {{ end }}
+    {{ end }}
+</ol>
+
+{{ end }}
+
+{{ end }}
+{{ if .Params.displayTitle }}
+<h1>{{ .Title }}</h1>
+{{ end }}
+{{ .Content }}
+{{ end }}

@@ -1,0 +1,5 @@
+{{ $imagePath := printf "images/%s" (.Get "src") }}
+{{ $image := $imagePath | resources.Get }}
+{{ if $image }}
+    <img src="{{ $image.RelPermalink }}" alt="{{ .Get "alt" }}" {{ with .Get "class" }}class="{{ . }}"{{ end }}>
+{{ end }}

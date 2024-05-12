@@ -1,0 +1,19 @@
+baseURL = 'http://gutibran.com'
+languageCode = 'en-us'
+title = "Brandon Gutierrez's Website"
+theme = 'mytheme'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
+
+[params]
+    buildDate = "not built yet"
+    uniqueViews = 0
+    siteBuilds = 0
+    math = true

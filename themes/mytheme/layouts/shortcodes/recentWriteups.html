@@ -1,0 +1,14 @@
+{{ $posts := where .Site.RegularPages "Params.postType" "writeup" }}
+
+{{ if gt (len $posts) 0}}
+    <ul>
+        {{ range $posts }}
+        <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            <small>({{ .Date.Format "January 2, 2006" }})</small>
+        </li>
+        {{ end }}
+    </ul>
+{{ else }}
+    <p>Brandon has not posted any writeups yet, as of {{ .Site.Params.buildDate }}</p>
+{{ end }}

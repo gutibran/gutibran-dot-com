@@ -1,0 +1,4 @@
+{{ $resource := .Page.Resources.GetMatch (printf "images/%s" (.Get "src")) }}
+{{ if $resource }}
+    <img src="{{ $resource.Permalink }}" alt="{{ .Get "alt" }}" {{ with .Get "class" }}class="{{ . }}"{{ end }}>
+{{ end }}

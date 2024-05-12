@@ -1,0 +1,10 @@
+{{ $posts := where .Site.RegularPages "Params.pageType" "post" | first 16 }}
+<ul>
+    {{ range $posts }}
+    <li>
+        <a href="{{ .Permalink }}">{{ .Page.Title }}</a>
+        <small>({{ .Date.Format "January 2, 2006" }})</small>
+        <small>[{{ .Params.postType }}]</small>
+    </li>
+    {{ end }}
+</ul>

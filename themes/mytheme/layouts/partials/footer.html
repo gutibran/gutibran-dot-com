@@ -1,0 +1,37 @@
+<footer>
+    <section class="deployment-stack">
+        <ul>
+            <li>
+                <a href="#">Hugo</a>
+            </li>
+            <li>
+                <a href="#">GitHub</a>
+            </li>
+            <li>
+                <a href="#">Vultr</a>
+            </li>
+            <li>
+                <a href="#">Porkbun</a>
+            </li>
+            <li>
+                <a href="#">Nginx</a>
+            </li>
+            <li>
+                <a href="#">Debian</a>
+            </li>
+        </ul>
+    </section>
+    <section class="stats">
+        <ul>
+            <li>
+                <small>unique views: {{ .Site.Params.uniqueViews }}</small>
+            </li>
+            <li>
+                <small>site builds: {{ .Site.Params.siteBuilds }}</small>
+            </li>
+            <li>
+                <small>last build: {{ .Site.Params.buildDate }}</small>
+            </li>
+        </ul>
+    </section>
+</footer>
