@@ -39,13 +39,17 @@ displayTitle: true
 
 ## Installing go
 ```bash
-sudo apt-get install curl git mercurial make binutils bison gcc build-essential
+# install dependencies
+sudo apt-get install curl git mercurial make binutils bison gcc build-essential -y
+
+# run install script
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+
+# reload bashrc
 source ~/.bashrc
 ```
 
-This is how to install the latest version of go as of 2024-05-12T03:34:41-05:00 which is the time that I am writing this sentance.
-
+This is how to install the latest version of go as of 2024-05-12T03:34:41-05:00 which is the time that I am writing this sentence. The process is kind of "fucky" but this is what worked for me.
 ```bash
 gvm install go1.4 -B
 gvm use go1.4
