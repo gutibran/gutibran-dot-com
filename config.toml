@@ -27,6 +27,11 @@ theme = 'mytheme'
     style = 'bw'
     tabWidth = 4
 
+  [markup.tableOfContents]
+    endLevel = 6
+    ordered = false
+    startLevel = 2
+
 [params]
     buildDate = "not built yet"
     uniqueViews = 0
