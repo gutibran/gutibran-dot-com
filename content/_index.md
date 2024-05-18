@@ -19,5 +19,5 @@ Hi, my name is Brandon Gutierrez. I work with computers and electronics.
 
 {{<globalStaticResource src="computer-garden.jpg" alt="computer garden">}}
 
-Sometimes I write blog posts about stuff that I am learning, building, and doing. Down below are my 16 most recently written blog posts. Check out my entire index (list) of [blog posts](/blog) if you are interested.
+Sometimes I write blog posts about stuff that I am learning, building, and doing. Check out my entire index (list) of [blog posts](/blog) if you are interetrue
 {{<recentBlogPosts>}}

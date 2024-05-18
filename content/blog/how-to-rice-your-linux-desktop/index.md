@@ -1,6 +1,6 @@
 ---
-title: "Using LLMs Locally"
-date: 2024-05-12T03:36:03-05:00
+title: "How Rice Your Linux Desktop"
+date: 2024-05-15T23:13:07-05:00
 description: ""
 draft: true
 pageType: "post"

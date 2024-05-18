@@ -2,7 +2,7 @@
 title: "Installing Arch Linux"
 date: 2024-05-12T23:13:50-05:00
 description: "My notes"
-draft: false
+draft: true
 pageType: "post"
 postType: "notes"
 tags: []

@@ -2,7 +2,7 @@
 title: "Setting Up Matamo Analytics With Nginx"
 date: 2024-05-11T22:37:30-05:00
 description: ""
-draft: false
+draft: true
 pageType: "post"
 postType: "notes"
 tags: []
@@ -15,3 +15,83 @@ toc: true
 displayTitle: true
 ---
 
+- create a symlink from ~/repos/matomo to /var/www/analytics.gutibran.com
+- create nginx config file
+- install php, php-fpm and dependencies for matomo to work properly
+
+```bash
+sudo apt-get install php php-curl php-gd php-cli mariadb-server php-mysql php-xml php-mbstring
+```
+
+- configure and secure mariadb
+- set subdomain
+- enable https
+
+```nginx
+server {
+    listen [::]:80;
+    listen 80;
+    server_name analytics.example.com;
+
+    access_log /var/log/nginx/matomo.access.log;
+    error_log /var/log/nginx/matomo.error.log;
+
+    root /var/www/analytics.gutibran.com; 
+    
+    index index.php;
+        
+    ## only allow accessing the following php files
+    location ~ ^/(index|matomo|piwik|js/index).php {
+        include snippets/fastcgi-php.conf;
+        fastcgi_param HTTP_PROXY ""; # prohibit httpoxy: https://httpoxy.org/
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock; 
+    }
+    
+    ## needed for HeatmapSessionRecording plugin
+    location = /plugins/HeatmapSessionRecording/configs.php { 
+        include snippets/fastcgi-php.conf;
+        fastcgi_param HTTP_PROXY "";
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock; 
+    }
+    
+    ## deny access to all other .php files
+    location ~* ^.+\.php$ {
+        deny all;
+        return 403;
+    }
+
+    ## serve all other files normally 
+    location / {
+        try_files $uri $uri/ =404;
+    }
+    
+    ## disable all access to the following directories 
+    location ~ /(config|tmp|core|lang) {
+        deny all;
+        return 403; # replace with 404 to not show these directories exist
+    }
+    location ~ /\.ht {
+        deny  all;
+        return 403;
+    }
+
+    location ~ \.(gif|ico|jpg|png|svg|js|css|htm|html|mp3|mp4|wav|ogg|avi|ttf|eot|woff|woff2|json)$ {
+        allow all;
+        ## Cache images,CSS,JS and webfonts for an hour
+        ## Increasing the duration may improve the load-time, but may cause old files to show after an Matomo upgrade
+        expires 1h;
+        add_header Pragma public;
+        add_header Cache-Control "public";
+    }
+
+    location ~ /(libs|vendor|plugins|misc/user) {
+        deny all;
+        return 403;
+    }
+
+    ## properly display textfiles in root directory
+    location ~/(.*\.md|LEGALNOTICE|LICENSE) {
+        default_type text/plain;
+    }
+}
+``

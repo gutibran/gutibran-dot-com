@@ -1,8 +1,8 @@
 ---
-title: "Using LLMs Locally"
-date: 2024-05-12T03:36:03-05:00
+title: "How Linux Works Notes"
+date: 2024-05-15T23:12:29-05:00
 description: ""
-draft: true
+draft: true 
 pageType: "post"
 postType: "notes"
 tags: []

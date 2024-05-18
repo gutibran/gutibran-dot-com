@@ -2,7 +2,7 @@
 title: "Mastering Go Notes"
 date: 2024-05-12T02:09:42-05:00
 description: "My notes from the book \"Mastering Go\" by Mihalis Tsoukalos."
-draft: false
+draft: true
 pageType: "post"
 postType: "notes"
 tags: []

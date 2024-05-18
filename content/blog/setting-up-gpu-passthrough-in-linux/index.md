@@ -2,7 +2,7 @@
 title: "Setting Up Gpu Passthrough in Linux"
 date: 2024-05-13T01:31:11-05:00
 description: ""
-draft: false
+draft: true
 pageType: "root"
 tags: []
 enableBreadcrumbs: false

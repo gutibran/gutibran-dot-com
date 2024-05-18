@@ -2,7 +2,7 @@
 title: "Setting Up Debian Server"
 date: 2024-05-11T19:30:56-05:00
 description: "Notes on how to configure and harden a Debian Linux server. This is a very basic setup."
-draft: false
+draft: true
 pageType: "post"
 postType: "notes"
 tags: []
