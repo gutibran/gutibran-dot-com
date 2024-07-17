@@ -1,0 +1,6 @@
+<figure>
+    <img class="content-image" src="{{ .Get "src" }}" alt="{{ .Get "alt" }}" class="{{ .Get "class" }}" />
+    {{ if .Get "caption" }}
+    <figcaption>{{ .Get "caption" }}</figcaption>
+    {{ end }}
+</figure>
