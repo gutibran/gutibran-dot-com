@@ -1,6 +1,6 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://main--vermillion-creponne-2c85a8.netlify.app/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = "Brandon Gutierrez's website"
 
 #[[menus.main]]
 #name = 'Home'

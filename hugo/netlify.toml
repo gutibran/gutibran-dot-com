@@ -1,6 +1,7 @@
 [build.environment]
 HUGO_VERSION = "0.123.7"
 TZ = "America/Chicago"
+HUGO_ENV = "production"
 
 [build]
 publish = "public"

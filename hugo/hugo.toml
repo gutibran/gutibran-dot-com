@@ -1,4 +1,4 @@
-baseURL = 'https://gutibran.com/'
+baseURL = 'https://main--vermillion-creponne-2c85a8.netlify.app/'
 languageCode = 'en-us'
 title = "Brandon Gutierrez's website"
 theme = 'my-theme'
