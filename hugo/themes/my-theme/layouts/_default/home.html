@@ -81,14 +81,4 @@
     </figure>
   </div>
 </div>
-<h2>Recent blog posts</h2>
-{{ $posts := where (where .Site.Pages "Section" "blog") "Params.postType" "blog" }}
-{{ $limitedPosts := first 16 $posts }}
-{{ range $limitedPosts }}
-<h3 class="blog-link">
-  <small>{{ .Date.Format "01-02-2006" }}</small>
-  <a href="{{ .Permalink }}">
-    {{ .Title }}
-</h3>
-{{ end }}
 {{ end }}
