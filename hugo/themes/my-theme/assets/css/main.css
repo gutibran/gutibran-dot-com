@@ -1,194 +1,150 @@
-/* MY STYLES */
-
-html {
+/* HTML DOCUMENT */
+body {
+  padding: 1em 0;
+  margin: 0;
+  background-color: #1b1b1b;
+  color: #f5f5f5;
   font-family: monospace;
-  height: 100%;
   font-size: 16px;
 }
 
-body {
-  width: 768px;
-  background-color: #1b1b1b;
-  color: whitesmoke;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  gap: 2em;
+h1 {
+    font-size: 2rem; /* Equivalent to 32px if body font-size is 16px */
 }
 
-ul {
-  list-style: none;
-  padding-left: 0;
+h2 {
+    font-size: 1.5rem; /* Equivalent to 24px if body font-size is 16px */
 }
 
-a {
-  color: whitesmoke;
+h3 {
+    font-size: 1.25rem; /* Equivalent to 20px if body font-size is 16px */
 }
 
-a:hover {
-  color: #ffffaa;
-  text-decoration: none;
+h4 {
+    font-size: 1.125rem; /* Equivalent to 18px if body font-size is 16px */
 }
 
-p {
-  line-height: 1.5em;;
+h5 {
+    font-size: 1rem; /* Equivalent to 16px if body font-size is 16px */
 }
 
-h1, h2, h3, h4, h5, h6 {
+h6 {
+    font-size: 0.875rem; /* Equivalent to 14px if body font-size is 16px */
+}
+
+small {
+    font-size: 0.875rem; /* Equivalent to 14px if body font-size is 16px */
+
+}
+
+/* HEADER */
+nav > pre {
+  margin: 0;
+  text-align: center;
+  font-size: 10px;
   font-weight: bolder;
 }
 
-.content-image {
-  max-width:50%;
-  margin: 0 auto;
-  display: block;
-}
-
-header { 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2em;
-}
-
-header > nav > a {
-  text-decoration: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-  margin: 0 auto;
-}
-
-header > a pre:hover {
-  color: #ffffaa;
-}
-
-header > nav > ul {
+nav > ul {
+  list-style: none;
+  padding-left: 0;
   display: flex;
   flex-direction: row;
   gap: 1em;
   justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+nav > ul > li > a {
+  color: #f5f5f5;
+}
+
+nav > ul > li > a:hover {
+  text-decoration: none;
 }
 
 marquee {
-  background-color: #ffffaa;
   color: #000000;
+  background-color: yellow;
+  padding: 0.666em;
 }
 
+/* CONTENT CONTAINER (MAIN) */
 main {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+  padding: 1em;
 }
 
-footer {
-  flex-shrink: -1;
+p {
+  line-height: 1.66em;
+  font-size: 1rem;
 }
 
-.introduction {
-  display: flex;
-  flex-direction: row;
-  gap: 2em;
-}
-
-.introduction-paragraph {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-}
-
-.introduction-visual {
-  width: 50%;
-}
-
-.introduction-image {
-  width: 100%;
-  display: block;
-  margin: 0 auto;
-  border: dashed #ffffaa 1px;
-}
-
-.social-media-icons {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: start;
-  gap: 2em;
-}
-
-.social-media-icons li a > svg {
-  height: 32px;
-  width: 32px;
-}
-
-.social-media-icons li a > svg g:hover {
-  fill: #ffffaa;
+p > a {
+  color: #f5f5f5;
 }
 
 .blog-link {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 0.5em;
 }
 
+.blog-link a {
+  color: #f5f5f5;
+}
 
-div.highlight pre {
+.blog-link a:hover {
+  text-decoration: none;
+}
+
+/* THIS IS THE BOX FOR THE SYNTAX HIGHLIGHTING */
+.chroma {
+  padding: 1em;
+  overflow: auto;
   font-size: 12px;
-  word-break: break-word;
-  white-space: pre;
 }
 
-.highlight div,
-.highlight pre {
-  overflow-x: auto;
+
+/* INTRODUCTION */
+.introduction-words ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1em;
 }
+
+.introduction-words ul li svg {
+  height: 24px;
+  width: 24px;
+}
+
+.introduction-words ul li svg g {
+  fill: #f5f5f5;
+}
+
+.introduction-visual img {
+  margin: 1em auto;
+  display: block;
+  max-width: 100%;
+}
+
+.introduction-visual figcaption {
+  text-align: center;
+}
+
 
 /* MEDIA QUERIES */
-@media (max-width: 768px) {
-  body {
-    font-size: 16px;
-    gap: 1em;
-  }
+@media (min-width: 889px) {
+    body {
+      width: 69%;
+      margin: 0 auto;
+    }
 
-  header pre {
-    font-size: 10px;
-  }
-
-  main {
-    gap: 1em;
-    padding: 1em
-  }
-
-  .introduction {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-  }
-
-  .introduction-paragraph {
-    width: 100%;
-  }
-
-  .introduction-visual {
-    width: 50%;
-    height: 50%;
-  }
-
-  .social-media-icons {
-    gap: 1em;
-  }
-
-  .social-media-icons li a svg {
-    width: 24px;
-    height: 24px;
-  }
+    main section {
+      display: flex;
+      flex-direction: row;
+    }
 }
-

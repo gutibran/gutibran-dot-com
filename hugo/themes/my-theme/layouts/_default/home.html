@@ -1,10 +1,9 @@
 {{ define "main" }}
-<div class="introduction">
-  <div class="introduction-paragraph">
-    <h1>Hello, my name is Brandon Gutierrez.</h1>
-    <p>I’m currently studying Electrical Engineering and Applied Mathematics at Texas State University in San Marcos,
-      Texas. Strong interest in cybersecurity, deep learning, and hardware.</p>
-    <ul class="social-media-icons">
+<section>
+  <div class="introduction-words">
+    <h1>Hi, I'm Brandon Gutierrez.</h1>
+    <p>{{ .Content }}</p>
+    <ul>
       <li>
         <a href="https://github.com/gutibran" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
@@ -70,15 +69,12 @@
         </a>
       </li>
     </ul>
-  <figure>
-    <img class="introduction-image not-me" src="/images/not-me-ascii-art.png" alt="Not me">
-  </figure>
   </div>
   <div class="introduction-visual">
     <figure>
-      <img class="introduction-image" src="/images/cyborg-woman-ascii-art.png" alt="Cyborg Woman">
+      <img src="/images/not-me-ascii-art.png" alt="Brandon Gutierrez pixel art" />
       <figcaption></figcaption>
     </figure>
   </div>
-</div>
+</section>
 {{ end }}

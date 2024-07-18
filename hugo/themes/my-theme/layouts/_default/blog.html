@@ -1,0 +1,13 @@
+{{ define "main" }}
+    <h1>Blog</h1>
+    <p>Here is my index of blog posts. Technological prose.</p>
+    {{ $posts := where (where .Site.Pages "Section" "blog") "Params.postType" "blog" }}
+    {{ range $posts }}
+        <h3 class="blog-link">
+            <small>{{ .Date.Format "01-02-2006" }}</small>
+            <a href="{{ .Permalink }}">
+                {{ .Title }}
+            </a>
+        </h3>
+    {{ end }}
+{{ end }}
