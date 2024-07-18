@@ -1,6 +1,6 @@
 {{ define "main" }}
     <h1>Blog</h1>
-    <p>Here is my index of blog posts. Technological prose.</p>
+    <p>Words.</p>
     {{ $posts := where (where .Site.Pages "Section" "blog") "Params.postType" "blog" }}
     {{ range $posts }}
         <h3 class="blog-link">
