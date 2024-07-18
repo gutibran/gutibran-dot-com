@@ -104,6 +104,14 @@ p > a {
   font-size: 12px;
 }
 
+/* Fixes iOS font sizing anomaly */
+code {
+    text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
 
 /* INTRODUCTION */
 .introduction-words ul {
@@ -139,12 +147,24 @@ p > a {
 /* MEDIA QUERIES */
 @media (min-width: 889px) {
     body {
-      width: 69%;
+      width: 50%;
       margin: 0 auto;
+    }
+
+    .introduction-visual figure {
+      margin: 0;
+    }
+
+    main {
+      margin: 1em 0;
+      padding: 0;
     }
 
     main section {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1em;
     }
 }
