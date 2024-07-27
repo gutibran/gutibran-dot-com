@@ -1,0 +1,17 @@
+---
+import UnorderedList from "../components/UnorderedList.astro";
+import Link from "../components/Link.astro";
+import Paragraph from "../components/Paragraph.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Blog"
+const allBlogPosts = await Astro.glob("./blog/*.mdx")
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <h1>{pageTitle}</h1>
+    <Paragraph>Technical words.</Paragraph>
+    <UnorderedList>
+        {allBlogPosts.map((blogPost) => <Link url={blogPost.url}>{blogPost.frontmatter.title}</Link>)}
+    </UnorderedList>
+</BaseLayout>

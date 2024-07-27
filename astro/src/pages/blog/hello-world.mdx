@@ -1,0 +1,83 @@
+---
+layout: "../../layouts/MDXBlogPostLayout.astro"
+title: "hello world"
+tags: ["self"]
+---
+
+Hello, world! I have once again built my website gutibran dot com. This time I used the Astro web framework. Building with Astro was more intuitive than building with the Hugo web framework because I have more expereience with JavaScript and its toolings. Astro's documentation is great! Well documented and easy to understand. The design and implementation is not perfect but it is working. This is the MVP (minimum viable product), I will continue to iterate and improve over time. This is the foundation. Kubutu lenix.
+
+$$
+\int_{0}^{\infty} \left( \sum_{n=1}^{\infty} \frac{1}{n^2} \right) e^{-x^2} \, dx = \frac{\pi}{6}
+$$
+
+```python
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+class BinaryTree:
+    def __init__(self):
+        self.root = None
+
+    def insert(self, value):
+        if self.root is None:
+            self.root = Node(value)
+        else:
+            self._insert(self.root, value)
+    
+    def _insert(self, node, value):
+        if value < node.value:
+            if node.left is None:
+                node.left = Node(value)
+            else:
+                self._insert(node.left, value)
+        else:
+            if node.right is None:
+                node.right = Node(value)
+            else:
+                self._insert(node.right, value)
+
+    def inorder_traversal(self):
+        return self._inorder_traversal(self.root, [])
+    
+    def _inorder_traversal(self, node, values):
+        if node:
+            self._inorder_traversal(node.left, values)
+            values.append(node.value)
+            self._inorder_traversal(node.right, values)
+        return values
+
+    def preorder_traversal(self):
+        return self._preorder_traversal(self.root, [])
+    
+    def _preorder_traversal(self, node, values):
+        if node:
+            values.append(node.value)
+            self._preorder_traversal(node.left, values)
+            self._preorder_traversal(node.right, values)
+        return values
+
+    def postorder_traversal(self):
+        return self._postorder_traversal(self.root, [])
+    
+    def _postorder_traversal(self, node, values):
+        if node:
+            self._postorder_traversal(node.left, values)
+            self._postorder_traversal(node.right, values)
+            values.append(node.value)
+        return values
+
+# Example usage
+if __name__ == "__main__":
+    tree = BinaryTree()
+    values = [5, 3, 7, 2, 4, 6, 8]
+    
+    for value in values:
+        tree.insert(value)
+    
+    print("Inorder Traversal:", tree.inorder_traversal())
+    print("Preorder Traversal:", tree.preorder_traversal())
+    print("Postorder Traversal:", tree.postorder_traversal())
+```

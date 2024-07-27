@@ -1,0 +1,21 @@
+---
+import Link from "./Link.astro";
+import UnorderedList from "./UnorderedList.astro";
+---
+
+<nav>
+    <UnorderedList styles="flex flex-row justify-center align-middle gap-3">
+        <li>
+            <Link url="/">Home</Link>
+        </li>
+        <li>
+            <Link url="/portfolio">Portfolio</Link>
+        </li>
+        <li>
+            <Link url="/blog">Blog</Link>
+        </li>
+        <li>
+            <Link url="/videos">Videos</Link>
+        </li>
+    </UnorderedList>
+</nav>

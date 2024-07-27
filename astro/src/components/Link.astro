@@ -1,0 +1,6 @@
+---
+
+const { url, openNewTab, styles } = Astro.props
+---
+
+{openNewTab ? <a class=`underline ${styles}` href={url} target="_blank" rel="noopener noreferrer"><slot /></a> : <a class=`underline ${styles}` href={url}><slot /></a>}

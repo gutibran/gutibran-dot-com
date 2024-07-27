@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets"
+import myImage from "../images/currency.png"
+import BaseLayout from "../layouts/BaseLayout.astro"
+import Paragraph from "../components/Paragraph.astro"
+import Figure from "../components/Figure.astro"
+import Link from "../components/Link.astro"
+
+const pageTitle = "Home"
+---
+
+<BaseLayout pageTitle={pageTitle} description="The home page.">
+	<Figure imagePath={myImage} altText="robot" figureCaption="Need this, will add cool pic later" />
+	<Paragraph>Hello. My name is Brandon Gutierrez. I'm an avid computer user, electrical engineering BSc student, and a cybersecurity enthusiast. I write <Link url="/blog">blog posts</Link> and make <Link url="/videos">videos</Link> about technical stuff that I am learning or building. I have built a <Link url="/store">store</Link> where I sell miscellaneous stuff ranging from electronics, books, merchandise, etc. This site is a work in progress.</Paragraph>
+</BaseLayout>

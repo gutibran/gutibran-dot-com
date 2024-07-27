@@ -1,0 +1,22 @@
+---
+import { Icon } from "astro-icon/components"
+import Link from "./Link.astro"
+import UnorderedList from "./UnorderedList.astro"
+
+const socialMediaLinks = [
+    { siteName: "GitHub", baseURL: "https://github.com", userName: "gutibran", iconName: "cib:github" },
+    { siteName: "LinkedIn", baseURL: "https://linkedin.com/in", userName: "gutibran", iconName: "cib:linkedin" },
+    { siteName: "X", baseURL: "https://x.com", userName: "gutibran", iconName: "arcticons:x-twitter" },
+    { siteName: "YouTube", baseURL: "https://youtube.com/@", userName: "gutibran", iconName: "fa:youtube-square" },
+    { siteName: "YouTube", baseURL: "https://youtube.com/@", userName: "gutibran", iconName: "mdi:rss-box" },
+]
+---
+
+<UnorderedList styles="flex flex-row gap-6 justify-center align-middle">
+    {socialMediaLinks.map((socialMediaLink) =>
+    (
+        <Link url={`${socialMediaLink.baseURL}/${socialMediaLink.userName}`} openNewTab>
+            <Icon name={socialMediaLink.iconName} size={32} />
+        </Link>
+    ))}
+</UnorderedList>

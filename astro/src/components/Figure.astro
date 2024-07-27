@@ -1,0 +1,16 @@
+---
+import Image from "astro/components/Image.astro";
+
+const { figureCaption, imagePath, altText } = Astro.props
+---
+
+{
+figureCaption ? 
+<figure class="flex flex-col justify-center align-middle gap-3">
+    <Image class="block my-0 mx-auto" src={imagePath} alt={altText} width={256} />
+    <figcaption class="text-center">{figureCaption}</figcaption>
+</figure>     :
+<figure>
+<Image src={imagePath} alt={altText} width={256} />
+</figure>
+}
