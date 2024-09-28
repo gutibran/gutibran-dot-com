@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Blog"
+const allBlogPosts = await Astro.glob("./blog/*.mdx")
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <h1>{pageTitle}</h1>
+    <ul>
+        {allBlogPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+    </ul>
+</BaseLayout>
