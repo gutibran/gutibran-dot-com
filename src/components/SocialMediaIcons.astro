@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components"
+---
+<style>
+    ul {
+        list-style: none;
+        padding: 1em;;
+        padding-left: 0;
+        display: flex;
+        gap: 1em;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    ul li a {
+    color: black;
+    }
+
+    ul li a:hover {
+        opacity: 0.50;
+    }
+
+    [data-icon] {
+        font-size: 1.33em;
+    }
+</style>
+<ul>
+    <li>
+        <a href="https://linkedin.com/in/gutibran" target="_blank">
+            <Icon name="simple-icons:linkedin" />
+        </a>
+    </li>
+    <li>
+        <a href="https://github.com/gutibran" target="_blank">
+            <Icon name="simple-icons:github" />
+        </a>
+    </li>
+    <li>
+        <a href="https://x.com/gutibran" target="_blank">
+            <Icon name="simple-icons:x"/>
+        </a>
+    </li>
+    <li>
+        <a href="https://youtube.com/@gutibran" target="_blank">
+            <Icon name="simple-icons:youtube"/>
+        </a>
+    </li>
+    <li>
+        <a href="https://instagram.com/gutibran_" target="_blank">
+            <Icon name="simple-icons:instagram" />
+        </a>
+    </li>
+    <li>
+        <a href="#" download="#" target="_blank">
+            <Icon name="simple-icons:rss" />
+        </a>
+    </li>
+</ul>

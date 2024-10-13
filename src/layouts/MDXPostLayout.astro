@@ -14,9 +14,28 @@ const { frontmatter } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Brandon Gutierrez's Website | Blog | {frontmatter.title}</title>
 </head>
+<style>
+    body {
+        max-width: 1024px;
+        min-height: 100vh;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main {
+        flex: 1;
+        width: 100%;
+    }
+</style>
 <body>
     <Header />
-    <slot />
+    <main>
+        <slot />
+    </main>
     <Footer />
 </body>
 </html>

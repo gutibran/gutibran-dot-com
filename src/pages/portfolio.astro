@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Portfolio"
+const allBlogPosts = await Astro.glob("./blog/*.mdx")
+---
+
+<style>
+    ul {
+        display: flex;
+        list-style: square;
+    }
+
+    ul li a {
+        color: black;
+    }
+</style>
+<BaseLayout pageTitle={pageTitle}>
+    <h1>{pageTitle}</h1>
+    <p>Demonstrate a level of competency to the reader by showing projects that I have worked on and or contributed to.</p>
+            <ul>
+            {allBlogPosts
+                .filter(post => post.frontmatter.showOnPortfolio)
+                .map(post => (
+                    <li>
+                    <a href={post.url}>{post.frontmatter.projectTitle}</a>
+                    </li>
+                ))
+            }
+        </ul>
+</BaseLayout>

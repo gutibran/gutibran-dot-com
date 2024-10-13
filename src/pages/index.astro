@@ -1,9 +1,16 @@
 ---
+import Image from "astro/components/Image.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
-
 const pageTitle = "Home"
 ---
 
+<style>
+	img {
+		width: 50%;
+		height: 50%;
+	}
+</style>
 <BaseLayout pageTitle={pageTitle}>
-	<h1>{pageTitle}</h1>
+	<h1>Brandon Gutierrez</h1>
+	<p>Studying electrical engineering and applied mathematics at Texas State University. Interested in network security and ai/ml.</p>
 </BaseLayout>
