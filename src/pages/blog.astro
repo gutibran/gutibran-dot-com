@@ -20,6 +20,6 @@ const allBlogPosts = await Astro.glob("./blog/*.mdx")
     <h1>{pageTitle}</h1>
     <p>Share knowledge and thoughts.</p>
     <ul>
-        {allBlogPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+        {allBlogPosts.map((post) => post.frontmatter.draft === false ? <li><a href={post.url}>{post.frontmatter.title}</a></li> : null)}
     </ul>
 </BaseLayout>

@@ -1,0 +1,76 @@
+---
+title: 'Binary Trees'
+pubDate: 2024-10-13
+description: 'Notes about the binary tree data structure.'
+author: 'Brandon Gutierrez'
+layout: "../../layouts/MDXPostLayout.astro"
+showOnPortfolio: false
+draft: true
+---
+
+# Binary Trees
+
+## What is a binary tree
+
+## How are binary trees represented in memory
+
+## How to implement binary trees
+
+### List representation
+
+### Linked representation
+This representation uses the object oriented programming paradigm. A class is used to represent a single node in the binary tree. Each binary tree node stores data and pointers to two other binary tree nodes which are the left and right child.
+
+```python
+class BinaryTreeNode:
+    """Represents a binary tree node."""
+    def __init__(self, data):
+        """Initializes the attributes of BinaryTreeNode.""" 
+        self.data = data
+        self.left_child = None
+        self.right_child = None
+```
+
+Here are the chords for the verse.
+```python
+    def insert_left_child(self, data):
+        """Insert a new node that will be in place of the left child."""
+        new_binary_tree_node = BinaryTreeNode(data)
+        if not self.left_child:
+            self.left_child = new_binary_tree_node
+        else:
+            temporary = new_binary_tree_node
+            temporary.left_child = self.left_child
+            self.left_child = temporary
+```
+
+Here are some more chords.
+```python
+    def insert_right_child(self, data):
+        """Insert a new node that will be in place of the right child."""
+        new_binary_tree_node = BinaryTreeNode(data)
+        if not self.right_child:
+            self.right_child = new_binary_tree_node
+        else:
+            temporary = new_binary_tree_node
+            temporary.right_child = self.right_child
+            self.right_child = temporary
+```
+
+Here are getters and setters.
+```python
+    def get_left_child(self):
+        return self.left_child
+    
+    def get_right_child(self)
+        return self.right_child
+    
+    def get_node_data(self):
+        return self.data
+    
+    def set_node_data(self, new_data):
+        self.data = new_data
+```
+
+## Applications of a binary tree
+- Parse tree
