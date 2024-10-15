@@ -3,7 +3,7 @@ import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import faviconSrc from "../images/favicon.jpeg"
 
-const { pageTitle } = Astro.props
+const { pageTitle, description } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -12,11 +12,13 @@ const { pageTitle } = Astro.props
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description}>
     <link rel="icon" type="image/jpeg" href={faviconSrc.src} />
     <title>Brandon Gutierrez's Website | {pageTitle}</title>
 </head>
 <style>
     body {
+        height: 100%;
         max-width: 1024px;
         min-height: 100vh;
         margin: 0 auto;

@@ -2,8 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Portfolio"
 const allBlogPosts = await Astro.glob("./blog/*.mdx")
+const description = "The portfolio index of Brandon Gutierrez's website. A complete listing of all projects that Brandon Gutierrez has created and or contributed to."
 ---
-
 <style>
     ul {
         display: flex;
@@ -14,7 +14,7 @@ const allBlogPosts = await Astro.glob("./blog/*.mdx")
         color: black;
     }
 </style>
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={description}>
     <h1>{pageTitle}</h1>
     <p>Demonstrate a level of competency to the reader by showing projects that I have worked on and or contributed to.</p>
             <ul>

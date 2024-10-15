@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "Blog"
 const allBlogPosts = await Astro.glob("./blog/*.mdx")
+const description = "The blog index of Brandon Gutierrez's website. A complete listing of all blog posts written by Brandon Gutierrez."
 ---
 <style>
     ul {
@@ -16,7 +17,7 @@ const allBlogPosts = await Astro.glob("./blog/*.mdx")
         color: black;
     }
 </style>
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={description}>
     <h1>{pageTitle}</h1>
     <p>Share knowledge and thoughts.</p>
     <ul>

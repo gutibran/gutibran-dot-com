@@ -11,6 +11,7 @@ const { frontmatter } = Astro.props
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={frontmatter.description}>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Brandon Gutierrez's Website | Portfolio | {frontmatter.title}</title>
 </head>

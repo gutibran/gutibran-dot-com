@@ -1,10 +1,26 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import fs from 'node:fs/promises';
+const pageTitle = "About";
+const description = "A page dedicated to information about Brandon Gutierrez."
 
-const pageTitle = "About"
+// Function to get the last modified time of the file
+async function getFileModifiedTime(filePath) {
+    try {
+        const stats = await fs.stat(filePath); // Get file stats
+        return new Date(stats.mtime); // Return modification time
+    } catch (err) {
+        console.error('Error reading file:', err);
+        return null;
+    }
+}
+
+// Awaiting file modification time
+const aboutModificationTime = await getFileModifiedTime("./src/pages/about.astro");
+const formattedModificationTime = aboutModificationTime ? aboutModificationTime.toLocaleString() : "Unknown";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
     <h1>{pageTitle}</h1>
-    <p>Tell the reader about myself.</p>
+    <p>Hello, I'm Brandon Gutierrez, I really like computers. Currently I am studying electrical engineering and applied mathematics at Texas State University in San Marcos, Texas. I have a wide array of technological interests, at the moment (as of {formattedModificationTime}) I am extremely interested in network security, machine learning, and server administration. Will add more later.</p>
 </BaseLayout>

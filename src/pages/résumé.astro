@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+const pageTitle = "Résumé"
+const description = "A page containing an embedded PDF of Brandon Gutierrez's current résumé."
+---
+
+<style>
+	img {
+		width: 50%;
+		height: 50%;
+	}
+    iframe {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 3 / 4;
+
+    }
+</style>
+<BaseLayout pageTitle={pageTitle}>
+	<h1>{pageTitle}</h1>
+    <p>This is the most recent version of my résumé.</p>
+    <iframe src="/resume.pdf" />
+</BaseLayout>
