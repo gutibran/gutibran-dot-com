@@ -1,0 +1,115 @@
+---
+title: 'How Exponents Work'
+pubDate: 2024-11-03
+description: 'My notes about exponents.'
+author: 'Brandon Gutierrez'
+layout: "../../layouts/MDXPostLayout.astro"
+showOnPortfolio: false
+draft: false
+---
+
+# What are exponents
+Exponents symbolically represent repeated multiplication of some value. Exponential expressions that contain an exponent in one of its terms. Exponents are generally in the form $b^{n}$. It is read as "$b$ to the $n$th power of $b$" or "the $n$th power of $b$". $b$ is called the base which is the factor of the repeated multiplication. $n$ is called the exponent or power which indicates how many times the base will multiplied by itself.
+
+$$
+b^n = b \cdot b \cdot b \cdot \ldots \cdot b \text{ (n times)}
+$$
+
+# Properties of exponents
+Understanding and memorizing the properties of exponents is helpful because they will be used later on. The basis of all these properties is rooted in the fact that exponents represent repated multiplication.
+
+## The product rule
+As mentioned above exponents represent repeated multiplication. Multiplying two exponential expressions that share the same base results in the sum of the exponents. The product of $b^{m} \cdot b^{n}$ is $m$ factors of $b$ times $n$ factors of $b$.
+
+$$
+b^{m} \cdot b^{n} = b^{m + n}
+$$
+
+For clarity, here is another perspective.
+$$
+(b \cdot b \cdot b \ldots \cdot \text{ [m times]}) \cdot (b \cdot b \cdot b \cdot b \cdot b \ldots \text{ [n times]})
+$$
+
+## The quotient rule
+Again, as mentioned above exponents represent repeated multiplication. Dividing exponential expressions that share the same base that is non-negative is difference of the exponents. The quotient of $b^m \div b^n$ is $m$ factors of $b$ minus $n$ factors of $b$. The factors are subtracted from the quotient because $\frac{b}{b} = 1$
+
+$$
+\frac{b^{m}}{b^{n}} = b^{m - n}
+$$
+
+For clarity, here is another perspective.
+
+$$
+\frac{\cancel{b} \cdot \cancel{b} \cdot b \cdot \ldots \cdot b \text{ (m times)}}{\cancel{b} \cdot \cancel{b} \cdot b \cdot \ldots \cdot b \text{ (n times)}}
+$$
+
+## The zero exponent rule
+When a base is raised to $0$ it returns the value $0$. Understanding division and how the quotient property of exponents works you can derive understanding of how the zero exponent rule works. Articulate understanding later.
+
+$$
+b^0 = 1
+$$
+
+For clarity. Think about this through the quotient rule.
+$$
+\frac{b^{n}}{b^{n}} = b^n - b^n = b^0 =  1
+$$
+
+## The negative exponent rule
+When a base is raised to a negative integer. Explain this better later.
+
+$$
+b^{-n} = \frac{1}{b^n}
+$$
+
+It helps to think of this rule through the quotient rule.
+
+$$
+\frac{b^m}{b^n} = \frac{1}{b^{|m - n|}}
+$$
+
+From the perspective of a real nigger.
+
+$$
+\frac{b^m}{b^n} = b^{m - n}
+$$
+
+## The powers rule (powers to powers)
+When an exponential expressions is raised to an exponent.
+
+$$
+(b^m)^n = b^{m \cdot n}
+$$
+
+## The product to powers rule
+When a product's factors are raised to an exponent.
+
+$$
+(ab)^n
+$$
+
+## The quotient to powers rule
+When a quotient is raised to a power.
+
+$$
+(\frac{a}{b})^n = \frac{a^n}{b^n}
+$$
+
+# Criteria for simplifying exponent expressions
+For an exponential expression to be simplified the exponential expression must meet the following conditions.
+- no parentheses
+- no powers are raised to powers
+- each base occurs only once
+- no negative or zero exponents
+
+# Scientific notation
+A shorthand notation to write really small or really large numbers. The absolute value of $a$ must be greater than or equal to $1$ and less than $10$ which is mathematically defined as $(1 \leq |a| \lt 10)$.
+
+$$
+a \times 10^n
+$$
+
+Converting from scientific notation to decimal just means to move the decimal $n$ spots to the left or right depending on the signage of $n$. If $n$ is positive move the decimal to the right $n$ times. If $n$ is negative move $n$ to the left $n$ times. Exponential properties can be used when performing operations with numbers scientific notations.
+
+# Citations
+- Blitzer, Robert. <i>College Algebra 7th Edition</i>. "Section P.2 Exponents and Scientific Notation" Pearson, January 1, 2017, pp. 20-32

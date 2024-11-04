@@ -1,4 +1,11 @@
 ---
+import dayjs from "dayjs"
+import utc from "dayjs/plugin/utc"
+dayjs.extend(utc)
+const lastModified = dayjs()
+  .utc(Astro.props.frontmatter.lastModified)
+  .format("HH:mm:ss DD MMMM YYYY UTC");
+
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 const { frontmatter } = Astro.props
@@ -35,6 +42,8 @@ const { frontmatter } = Astro.props
 <body>
     <Header />
     <main>
+        <h1>{frontmatter.title}</h1>
+        <date>Last edited: {lastModified}</date>
         <slot />
     </main>
     <Footer />
